@@ -28,8 +28,24 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div id="mymap"></div>
+<body> 
+<div class="map-wrapper">
+      <ui-gmap-google-map><div id="mymap"></div></ui-gmap-google-map>
+  </div>	
+<style>
+	.map-wrapper {
+  position: relative;
+  height: calc(100vh - 4em - 64px);
+}
+
+.angular-google-map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+	</style>
   <!--div id="contactform1 style="margin-top: 10px !important;">
   <div class="intro">
     <div class="intro-body">
@@ -153,6 +169,7 @@
   z-index: 0; 
   
 }
+
       @media (min-width: 767px) {
   
   #mymap {
