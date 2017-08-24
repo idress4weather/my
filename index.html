@@ -62,7 +62,8 @@
 
     </ul>
 </div>
-<div id="contactform1">	  
+<div id="contactform1">
+<div id="contactform2" ></div>	<!--div id="contactform2"-->			
 <div id="search-panel" class="panel">
     <h1>Search Contacts</h1>
     <form id="search" action="#">
@@ -96,7 +97,8 @@
             </div>
         </form>
     </div>
-<div id = "show-panel" class="panel"></div>    
+<div id = "show-panel" class="panel"></div>
+
 </div><!--div id="contactform"-->   
 </div><!--end of contactform-->
 
@@ -136,7 +138,12 @@
   margin:auto;
   max-width:30em;
 }
-
+	.panel{
+	position: relative;
+	}
+	#contactform2{
+	position: absolute;
+	}
   #mymap {
   width: 100%;
   height: 100%;
@@ -172,7 +179,7 @@ h1{
   font-size:1.2em;
   text-align:center;
 }
-
+	
 .panel{
   background:rgb(250,250,250);
   padding:1em;
