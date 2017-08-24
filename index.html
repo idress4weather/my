@@ -109,12 +109,12 @@
     #contactform { 
   position: relative; 
   z-index: 1; /* The z-index should be higher than Google Maps */
-  width:;
+  width: auto;
   margin: 60px auto 0;
   padding: 10px;
   background: black;
   height: auto;
-  opacity: .75; /* Set the opacity for a slightly transparent Google Form */ 
+  opacity: .45; /* Set the opacity for a slightly transparent Google Form */ 
   color: white;
 }
     #contactform1 { 
@@ -131,7 +131,7 @@
 
   #mymap {
   width: 100%;
-  height: 100%;
+  height: auto;
   position:absolute; 
   top: 0; 
   left: 0; 
@@ -142,13 +142,13 @@
   
   #mymap {
     width: 100%;
-  height: 100%;
+  height: auto;
   }
 }
 </style>
 <style>
 
-body {
+/*body {
   width: 100%;
   height: 100%;
   font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -158,8 +158,8 @@ body {
 html {
   width: 100%;
   height: 100%;
-}
-h1,
+}*/
+/*h1,*/
 h2,
 h3,
 h4,
@@ -178,9 +178,9 @@ p {
 font-size: 1.8em;
 }
 @media only screen and (max-width: 360px) {
-  h1 {
+ /* h1 {
     font-size: 3em;
-  }
+  }*/
   p {
     font-size: 1.6em;
   }
@@ -216,7 +216,7 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+  background: url(../img/) no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -326,6 +326,7 @@ h1{
 
 .panel{
   background:rgba(250,250,250);
+	 opacity: .97; /* Set the opacity for a slightly transparent Google Form */ 
   padding:1em;
   width:92.5%;
   margin:auto;
@@ -342,6 +343,7 @@ input{
 
 input:focus{
   outline:none;
+	
 }
 
 input::after{
@@ -354,19 +356,24 @@ input::after{
   max-width:30em;
   text-align:center;
   margin:auto;
+	
   li{
+	  
   list-style:none;
   display:inline-block;
     background:rgba(256,256,256,0.5);
     padding:0.7em;
     margin:0 0.1em;
-	cursor: pointer;   
+	   
   }
   li.active{
     background-color:rgba(256,256,256,0.95);
+	  cursor: pointer;
   }
-p:hover, h1:hover, a:hover {
+ .nav-list li:hover{
+ cursor: pointer;
     background-color: yellow;
+	
 }
 	
 	
