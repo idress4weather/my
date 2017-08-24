@@ -47,7 +47,7 @@ hr {
     max-width: 400px;
     border-color: #999999;
 }
-@media \0screen {
+/*@media \0screen {*/
 .brand{
         display: inherit;
         margin: 0;
@@ -60,7 +60,7 @@ hr {
         line-height: normal;
         color: #fff;    
 }
-}
+
 .address-bar {
     display: none;
 }
