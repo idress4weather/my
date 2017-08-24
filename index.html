@@ -69,7 +69,7 @@
   <div id="contactform">
 	   
         <div class="brand">my General Book</div>
-        <hr>
+        </div><!--div id="contactform"-->
 <div id="navigation">
     <ul class="nav-list">
 
@@ -137,7 +137,7 @@
   margin: 60px auto 0;
   padding: 10px;
   background: black;
-  height: 70%;
+  height: auto;
   opacity: .80; /* Set the opacity for a slightly transparent Google Form */ 
   color: white;
 	    text-align: center;
@@ -150,7 +150,7 @@
   /*margin: 60px auto 0;*/
   /*padding: 10px;*/
   background: #fff;
-  height: 60%;
+  height: 100%;
   opacity: .95; /* Set the opacity for a slightly transparent Google Form */ 
   color: #333;
   background:/*rgb(250,250,250)*/#fff;
@@ -207,6 +207,7 @@ h1{
 }
 	
 .panel{
+	position: relative;
   background:rgb(250,250,250);
   padding:1em;
   width:92.5%;
@@ -235,6 +236,9 @@ input::after{
   height:10px;
   background:red;
 }
+	#navigation{
+	position: relative;
+	}
 .nav-list{
   width:92.5%;
   max-width:30em;
