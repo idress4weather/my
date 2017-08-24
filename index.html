@@ -109,17 +109,17 @@
     #contactform { 
   position: relative; 
   z-index: 1; /* The z-index should be higher than Google Maps */
-  width: auto;
+  width:;
   margin: 60px auto 0;
   padding: 10px;
   background: black;
   height: auto;
-  opacity: .25; /* Set the opacity for a slightly transparent Google Form */ 
+  opacity: .75; /* Set the opacity for a slightly transparent Google Form */ 
   color: white;
 }
     #contactform1 { 
   position: relative; 
-  z-index: 1; /* The z-index should be higher than Google Maps */
+  z-index: 2; /* The z-index should be higher than Google Maps */
   width: auto;
   margin: 60px auto 0;
   padding: 10px;
@@ -303,10 +303,11 @@ a:focus {
   color: black;
   background-color: #42DCA3;
 }
-</style>      
+</style>
+	<!--$start:rgba(66,181,213,0.5);
+$end:rgba(58,210,11,0.5);-->
 <style>
-		$start:rgba(66,181,213,0.5);
-$end:rgba(58,210,11,0.5);;
+		
 
 body{
   font-family:sans-serif;
@@ -324,7 +325,7 @@ h1{
 }
 
 .panel{
-  background:rgb(250,250,250);
+  background:rgba(250,250,250);
   padding:1em;
   width:92.5%;
   margin:auto;
@@ -359,12 +360,17 @@ input::after{
     background:rgba(256,256,256,0.5);
     padding:0.7em;
     margin:0 0.1em;
+	cursor: pointer;   
   }
   li.active{
     background-color:rgba(256,256,256,0.95);
   }
+p:hover, h1:hover, a:hover {
+    background-color: yellow;
 }
-		</style>
+	
+	
+	</style>
 		<script>
 		;(function(global){
    var AddressBook = function(name,phone,email){
