@@ -70,9 +70,20 @@
 </div-->
   <div id="contactform">
 	   
-        <div class="brand">my General Book</div>
+        <div class="brand clearfix">my General Book</div>
+	<div id="navigation">
+   	 <ul class="nav-list">
+
+
+        <li id="js-show-all" class="btn btn-circle">ALL</li>
+        <li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
+        <li id="js-add-new" class="btn btn-circle">NEW</li>
+
+
+    	</ul>
+	</div>  
   </div><!--div id="contactform"-->
-<div id="navigation">
+<!--div id="navigation">
     <ul class="nav-list">
 
 
@@ -82,21 +93,29 @@
 
 
     </ul>
-</div>
+</div-->
 <!--div id="contactform1"-->
 <!--div id="contactform2" ></div-->	<!--div id="contactform2"-->			
 <div id="search-panel" class="panel">
     <h1>Search Contacts</h1>
     <form id="search" action="#">
-        <div id="results">
-          
-      </div>
-      <div class="btn btn-circle"><i></div>
+        <div id="results"></div>      
         <div>
             <label>
-                <input type="text" name="search" id="search" placeholder="Enter name of contact" />
+                <input type="text" name="search" id="search" placeholder="Enter name of contact or keyWords" />
             </label>
         </div>
+	<div>
+            <label>
+		    <input type="icon" name="search" id="search" placeholder="Enter BookIcon" /><a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
+      <ul>
+        <li><a href="#" class="btn btn-circle"><i>>Link 1</a></li>
+        <li><a href="#" class="btn btn-circle"><i>>Link 2</a></li>
+        <li><a href="#" class="btn btn-circle"><i>>Link 3</a></li>
+      </ul>
+                
+            </label>
+        </div>    
                 <input type="submit" value="Submit"  />
     </form>
 </div>
@@ -104,15 +123,38 @@
         <form id="contact" action="#">
             <h1>Add a new contact</h1>
             <div>
-            <div class="btn btn-circle"><i></div>
+	
+
+<!--add label new add kind of book icon checkbox-->
+<div>
+  <a href="#" class="btn btn-circle">ADDfield</a>
+  <ul>
+    <li>
+      <a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
+      <ul>
+        <li><a href="#" class="btn btn-circle"><i>>Link 1</a></li>
+        <li><a href="#" class="btn btn-circle"><i>>Link 2</a></li>
+        <li><a href="#" class="btn btn-circle"><i>>Link 3</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+			    
+<!--add label new add kind of book icon checkbox-->
                 <label>
                     <input type="text" name="person" id="name" placeholder="John Smith" />
+			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
                 </label>
                 <label>
                     <input type="text" name="phone" id="name" placeholder="1234567" />
+			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
                 </label>
                 <label>
                     <input type="text" name="email" id="name" placeholder="john@example.com" />
+			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
                 </label>
             </div>
             <div>
@@ -121,11 +163,42 @@
         </form>
     </div>
 <div id = "show-panel" class="panel"><div class="btn btn-circle"><i></div></div>
+<div id = "get-one" class="panel"></div>	
+
+
 
 </div><!--div id="contactform"-->   
 <!--/div><!--end of contactform-->
 
-
+	<style>
+div {background-color: green;}
+div a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: #666;}
+</style>
  
 	<style>
     html, body{
@@ -184,7 +257,7 @@
      #contactform2 { 
   position: relative; 
   z-index: 2; /* The z-index should be higher than Google Maps */
-  width: auto;
+  width: 300px;
   margin: 50px auto 0;
   padding: 10px;
   background: rgb(250,250,250); 
@@ -220,21 +293,7 @@ right: 0;
   
 }
 
-      @media (min-width: 767px) {
-  
-  #mymap {
-    width: 100%;
-  height: 100%;
-  }
-	      
-	      .nav-list li{
-  list-style:none;
-  display:inline-block;
-    /*background:rgba(256,256,256,0.5);*/
-    padding:0.7em;
-    margin:0 0.1em;
-	      }
-}
+   
 </style>
 <style>
 	/*	$start:rgba(66,181,213,0.5);
@@ -285,10 +344,10 @@ input::after{
   height:10px;
   background:red;
 }
-	#navigation{
-	position: relative;
-  padding: 10px;
-	}
+#navigation{
+ position: relative;
+ padding: 10px;
+}
 .nav-list {
     width: 92.5%;
     max-width: 50em;
@@ -368,7 +427,7 @@ width: 10px;
   -moz-animation-timing-function: linear;
 }    
 /*3VAR*/  
-/*.panel{
+.panel{
   position: relative;
   background:rgb(250,250,250);
   padding:1em;
@@ -377,17 +436,17 @@ width: 10px;
   max-width:30em;
   height: 92.5%;
 }
-*/
+
 /*2var*/
-.panel{
+/*.panel{
 position: relative; 
-  z-index: 1; /* The z-index should be higher than Google Maps */
+  z-index: 1; 
   width: auto;
   margin: 50px auto 0;
   padding: 10px;
   background: black;
   height: auto;
-  opacity: .60; /* Set the opacity for a slightly transparent Google Form */ 
+  opacity: .95; 
  
       text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -396,7 +455,7 @@ position: relative;
         font-weight: 700;
         line-height: normal;
         color: #000; 
-      }
+      }*/
 		</style>
 		<script>
 		;(function(global){
@@ -702,23 +761,11 @@ h6 {
 p {
 font-size: 1.8em;
 }
-@media only screen and (max-width: 360px) {
-  h1 {
-    font-size: 3em;
-  }
-  p {
-    font-size: 1.6em;
-  }
-}
+
 
  img {
   max-width: 100%;
   height: auto;
-}
-@media \0screen {
- img { 
-    width: auto; /* for ie 8 */
-  }
 }
 
 a {
@@ -753,37 +800,7 @@ a {
 .intro .intro-body .intro-text {
   font-size: 18px;
 }
-@media (min-width: 768px) {
-  .intro {
-    height: 100%;
-    padding: 0;
-  }
-  .intro .intro-body .brand-heading {
-    font-size: 100px;
-  }
-  .intro .intro-body .intro-text {
-    font-size: 26px;
-  }
-.btn-circle {
-  width: 42px;
-  height: 42px;
-  margin-top: 15px;
-  padding: 7px 16px;
-  border: 2px solid white;
-  border-radius: 100% !important;
-  font-size: 25px;
-  color: white;
-  background: transparent;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-}
-	.btn {
-  text-transform: uppercase;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-	}
-}
+
 .btn-circle {
   width: 70px;
   height: 70px;
@@ -842,6 +859,74 @@ a {
   color: black;
   background-color: #42DCA3;
 }
+		
+		
+		   @media (min-width: 767px) {
+  
+  #mymap {
+    width: 100%;
+  height: 100%;
+  }
+	      
+	      .nav-list li{
+  list-style:none;
+  display:inline-block;
+    /*background:rgba(256,256,256,0.5);*/
+    padding:0.7em;
+    margin:0 0.1em;
+	      }
+}
+		@media (min-width: 768px) {
+  .intro {
+    height: 100%;
+    padding: 0;
+  }
+  .intro .intro-body .brand-heading {
+    font-size: 100px;
+  }
+  .intro .intro-body .intro-text {
+    font-size: 26px;
+  }
+.btn-circle {
+  width: 42px;
+  height: 42px;
+  margin-top: 15px;
+  padding: 7px 16px;
+  border: 2px solid white;
+  border-radius: 100% !important;
+  font-size: 25px;
+  color: white;
+  background: transparent;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+	.btn {
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+	}
+}
+		@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.6em;
+  }
+}
+			@media \0screen {
+ img { 
+    width: auto; /* for ie 8 */
+  }
+}
+
+		@media \0screen {
+ img { 
+    width: auto; /* for ie 8 */
+  }
+}
+
 </style> 
     </body>
 
