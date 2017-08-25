@@ -107,7 +107,7 @@
         </div>
 	<div>
             <label>
-		    <input type="icon" name="search" id="search" placeholder="Enter BookIcon" /><a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
+		    <input type="text" name="search" id="search" placeholder="Enter BookIcon" /><a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
       <ul>
         <li><a href="#" class="btn btn-circle"><i>>Link 1</a></li>
         <li><a href="#" class="btn btn-circle"><i>>Link 2</a></li>
@@ -132,9 +132,12 @@
     <li>
       <a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
       <ul>
-        <li><a href="#" class="btn btn-circle"><i>>Link 1</a></li>
-        <li><a href="#" class="btn btn-circle"><i>>Link 2</a></li>
-        <li><a href="#" class="btn btn-circle"><i>>Link 3</a></li>
+        <li><a href="#" class="btn btn-circle"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="btn btn-circle"><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="btn btn-circle"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+	<li><a href="#" class="btn btn-circle"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="btn btn-circle"><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="btn btn-circle"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>      
       </ul>
     </li>
   </ul>
@@ -143,18 +146,18 @@
 <!--add label new add kind of book icon checkbox-->
                 <label>
                     <input type="text" name="person" id="name" placeholder="John Smith" />
-			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
                 </label>
                 <label>
                     <input type="text" name="phone" id="name" placeholder="1234567" />
-			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
                 </label>
                 <label>
                     <input type="text" name="email" id="name" placeholder="john@example.com" />
-			<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
-			<div class="btn btn-circle"<i class="fa fa-pencil" aria-hidden="true"></i></div>
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
                 </label>
             </div>
             <div>
@@ -162,8 +165,16 @@
             </div>
         </form>
     </div>
-<div id = "show-panel" class="panel"><div class="btn btn-circle"><i></div></div>
-<div id = "get-one" class="panel"></div>	
+<div id = "show-panel" class="panel"><div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div><!--all book--><div class="btn btn-circle"><i class="fa fa-phone" aria-hidden="true"></i></div><!--diff kind of book-->
+	<div class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+	<div class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></div>	
+</div>
+<div id = "get-one" class="panel">
+	<i class="fa fa-envelope-o" aria-hidden="true"></i>
+	<i class="fa fa-trash-o" aria-hidden="true"></i>
+	<i class="fa fa-pencil" aria-hidden="true"></i>
+			
+	</div>	
 
 
 
@@ -211,7 +222,7 @@ ul li ul li:hover {background: #666;}
   position: relative; 
   z-index: 1; /* The z-index should be higher than Google Maps */
   width: auto;
-  margin: 50px auto 0;
+  margin: 90px auto 0;
   padding: 10px;
   background: black;
   height: auto;
@@ -256,7 +267,7 @@ ul li ul li:hover {background: #666;}
 
      #contactform2 { 
   position: relative; 
-  z-index: 2; /* The z-index should be higher than Google Maps */
+  z-index: 2;
   width: 300px;
   margin: 50px auto 0;
   padding: 10px;
