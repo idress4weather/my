@@ -4,13 +4,14 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-/*body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: #000; /*url('../img/bg.jpg') no-repeat center center fixed;*/
+body {
+    
+    background: #000;} /*url('../img/bg.jpg') no-repeat center center fixed;*/
    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }*/
     /*video.fullscreen { 
   position: fixed;
