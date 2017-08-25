@@ -179,20 +179,20 @@
 	position: absolute;
 	}*/
 
-     #contactform { 
+     #contactform2 { 
   position: relative; 
-  z-index: 1; /* The z-index should be higher than Google Maps */
+  z-index: 2; /* The z-index should be higher than Google Maps */
   width: auto;
   margin: 50px auto 0;
   padding: 10px;
-  background: black;
+  background: rgb(250,250,250); 
   height: auto;
-  opacity: .60; /* Set the opacity for a slightly transparent Google Form */ 
+  opacity: .99; /* Set the opacity for a slightly transparent Google Form */ 
  
       text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 2.5em;
+        font-size: 1.5em;
         font-weight: 700;
         line-height: normal;
         color: #fff; 
@@ -320,7 +320,7 @@ input::after{
 
 /*1var*/
 /*#search, #contact-panel, #show-*/
-/*.panel{
+.panel{
   position: relative;
 width: 10px;
   height: 10px;
@@ -335,13 +335,11 @@ width: 10px;
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
   }
-/*#search, #contact-panel, #show-*/
-/*.panel:focus {
+.panel:focus {
   text-decoration: none;
   color: #1d9b6c;
   cursor: pointer;
 }
- /*#search i.animated, #contact-panel i.animated, #show-*/
  /*.panel i.animated {
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1s;
