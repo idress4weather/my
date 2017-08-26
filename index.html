@@ -67,28 +67,53 @@
 	</div>  
   </div>
 	<div id="contactform2" >
-	
-		<form Name='PhoneBook' onSubmit='return CheckMe();'> <!-- pk -->
-.
-.
-.
-   <input type="submit" value="Add Entry"></input> <!-- pk -->
-.
-.
-.
-<textarea Name='Book' rows="15" cols="60"></textarea> <!-- pk -->
-.
-.
-.
-</table>
-</form> <!- pk -->
+	<script type="text/javascript">
 
-<script language='JavaScript' type="text/javascript">
-var info = new Array();  //was: var info = newArray(); pk
-.
-.
-.
-</script>
+var contacts = {};
+
+contacts.Andriy = {
+firstName: "Andriy",
+lastName: "Zubko",
+age: "45",
+phone: "096-256-89-96",
+address: [
+["Almaznuy 25"],
+["Poltava"]
+]
+};
+
+contacts.Serg = {
+firstName: "Serg",
+lastName: "Masalukin",
+age: "33",
+phone: "050-236-65-88",
+address: [
+["Apartment 23"],
+["Kuiv 105"]
+]
+};
+
+var list = function(data) {
+for (var key in data) {
+alert(data[key].firstName);
+}
+};
+
+var search = function(name) {
+for (var key in contacts) {
+if (contacts[key].firstName === name) {
+document.write("Name: " + contacts[key].firstName + "</br>" + "Lastname: " + contacts[key].lastName + "</br>" + "Age: " + contacts[key].age + "</br>" + "Phone: " + contacts[key].phone + "</br>" + "Address: " + contacts[key].address + "</br>");
+return contacts[key];
+}
+}
+};
+
+list(contacts);
+search("Serg");
+
+</script>	
+</div>
+
 	
 <!--div id="contactform1"-->
 </div>	<!--div id="contactform2"-->			
