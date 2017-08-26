@@ -78,7 +78,7 @@ input[type=text]:focus {
 
 <form>
   
-	<span><input type="text" name="search" placeholder="Search.."></span>
+	<span><input id="search" type="text" name="search" placeholder="Search.."></span> 
 		<span> <button onclick="talk()" style="background: none; border:none; padding-top: 3px;"><i class="fa fa-microphone" aria-hidden="true" ></i></button></span>
  
 		<span><button onclick="stop()" style="background: none; border:none; padding-top: 3px;"><i class="fa fa-microphone-slash" aria-hidden="true" ></i></button></span>
@@ -228,9 +228,9 @@ input[type=text]:focus {
         <div>
 <div>
   
-  <ul>
+  <!--ul>
     <li>
-      <a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
+      <a href="#" class="btn btn-circle"><i class="fa fa-angle-double-down animated"></i></a>
       <ul>
         <li><a href="#" ><i class="fa fa-phone" aria-hidden="true"></i></a></li>
         <li><a href="#" ><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
@@ -240,21 +240,15 @@ input[type=text]:focus {
         <li><a href="#" ><i class="fa fa-cutlery" aria-hidden="true"></i></a></li>      
       </ul>
     </li>
-  </ul>
-</div>	
-            <label>
-		     <input type="text" name="search" id="search" placeholder="Enter BookIcon" /><a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
-     
-              </label>
-        </div>
+  </ul-->
+
 	<div>
             <label>
-		  <input type="text" name="search" id="searchicon" placeholder="Enter name of contact or keyWords" />
+		  <input type="text" name="search" id="search" placeholder="Enter name of contact or keyWords" />
  
                 
             </label>
-		<a href="#" class="btn btn-circle"><i class="fa fa-microphone" aria-hidden="true"></i>SAY</a>
-
+		
         </div>    
                 <input type="submit" value="Submit"  />
     </form>
