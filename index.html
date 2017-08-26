@@ -97,7 +97,44 @@ document.getElementById('searchResult').innerHTML =
 document.writeln(myPhonebook.indexOf('searchInput'))
 	
 </script>	
-	
+ <script language="JavaScript" type="text/javascript"> <!--
+
+   function CheckMe() {
+     document.PhoneBook.Book.value = document.PhoneBook.Book.value +
+           document.PhoneBook.firstName.value + " - " +
+           document.PhoneBook.lastName.value + " - " +
+           document.PhoneBook.phone.value + "\n";
+
+     alert(document.PhoneBook.firstName.value + " - " +
+           document.PhoneBook.lastName.value + " - " +
+           document.PhoneBook.phone.value + "\n");
+
+     return false;
+   }
+
+
+  // --> </script>
+		<form Name='PhoneBook' onSubmit='return CheckMe();'> <!-- pk -->
+.
+.
+.
+   <input type="submit" value="Add Entry"></input> <!-- pk -->
+.
+.
+.
+<textarea Name='Book' rows="15" cols="60"></textarea> <!-- pk -->
+.
+.
+.
+</table>
+</form> <!- pk -->
+
+<script language='JavaScript' type="text/javascript">
+var info = new Array();  //was: var info = newArray(); pk
+.
+.
+.
+</script>
 	
 <!--div id="contactform1"-->
 </div>	<!--div id="contactform2"-->			
