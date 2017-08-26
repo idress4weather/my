@@ -138,6 +138,13 @@ footer p {
 }
 
 @media screen and (min-width:768px) {
+    #results{
+    color: red;
+    text-align: center;
+    font-size: 26px;
+    background: #fff;
+    position: relative
+    }
     .brand {
         display: inherit;
         margin: 0;
