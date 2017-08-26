@@ -76,7 +76,7 @@ input[type=text]:focus {
 
 
 
-<form>
+<form id="search" action="#">
   
 	<span><input id="search" type="text" name="search" placeholder="Search.."></span> 
 		<span> <button onclick="talk()" style="background: none; border:none; padding-top: 3px;"><i class="fa fa-microphone" aria-hidden="true" ></i></button></span>
@@ -221,13 +221,13 @@ input[type=text]:focus {
 
 	
 <!--div id="contactform1"-->
-</div>	<!--div id="contactform2"-->			
+		
 <div id="search-panel" class="panel">
     <!--h1>Search Contacts</h1-->
-    <form id="search" action="#">
+    <!--form id="search" action="#"-->
         <div id="results"></div>      
-        <div>
-<div>
+        
+</div>
   
   <!--ul>
     <li>
@@ -243,7 +243,7 @@ input[type=text]:focus {
     </li>
   </ul id="search"-->
 
-	<div>
+	<!--div>
             <label>
 		  <input type="text" name="search"  placeholder="Enter name of contact or keyWords" />
  
@@ -253,7 +253,7 @@ input[type=text]:focus {
         </div>    
                 <input type="submit" value="Submit"  />
     </form>
-</div>
+</div-->
     <div id="contact-panel" class="panel">
         <form id="contact" action="#">
             <h1>Add a new contact</h1>
