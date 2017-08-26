@@ -67,51 +67,80 @@
 	</div>  
   </div>
 	<div id="contactform2" >
-	<script type="text/javascript">
-
-var contacts = {};
-
-contacts.Andriy = {
-firstName: "Andriy",
-lastName: "Zubko",
-age: "45",
-phone: "096-256-89-96",
-address: [
-["Almaznuy 25"],
-["Poltava"]
-]
-};
-
-contacts.Serg = {
-firstName: "Serg",
-lastName: "Masalukin",
-age: "33",
-phone: "050-236-65-88",
-address: [
-["Apartment 23"],
-["Kuiv 105"]
-]
-};
-
-var list = function(data) {
-for (var key in data) {
-alert(data[key].firstName);
-}
-};
-
-var search = function(name) {
-for (var key in contacts) {
-if (contacts[key].firstName === name) {
-document.write("Name: " + contacts[key].firstName + "</br>" + "Lastname: " + contacts[key].lastName + "</br>" + "Age: " + contacts[key].age + "</br>" + "Phone: " + contacts[key].phone + "</br>" + "Address: " + contacts[key].address + "</br>");
-return contacts[key];
-}
-}
-};
-
-list(contacts);
-search("Serg");
-
-</script>	
+	    <script type="text/javascript">
+      
+      var bob = {
+        firstName: "Bob",
+        lastName: "Bullock",
+        phoneNumber: "(650) 899 - 9918",
+        email: "bob.bullock@example.com"
+      };
+      var mary = {
+        firstName: "Mary",
+        lastName: "Johnson",
+        phoneNumber: "(650) 888 - 8888",
+        email: "mary.johnson@example.com"
+      };
+      var jorge = {
+        firstName: "Jorge",
+        lastName: "Polanco",
+        phoneNumber: "(201) 928 - 8008",
+        email: "jorge.polanco@example.com"
+      };
+      // THE CONTACT LIST
+      // ****************
+      var contacts = [];
+      contacts[0] = bob;
+      contacts[1] = mary;
+      contacts[2] = jorge;
+      console.log(contacts);
+      console.log(contacts[1].phoneNumber);
+      
+      // PRINT ONE ENTRY
+      // ***************
+      var printPerson = function (person) {
+        console.log(person.firstName + " " + person.lastName);
+      }
+      printPerson(bob);
+      // PRINT EMAIL LIST
+      // ****************
+      for(var x = 0; x < contacts.length; x++) {
+        console.log(contacts[x].email);
+      };
+      
+      // PRINT CONTACT LIST
+      // ******************
+      function list() {
+        for(var i = 0; i < contacts.length; i++) {
+          console.log(contacts[i]);
+        }
+      } 
+      list();
+      // FIND ENTRY BY LAST NAME
+      // *****************
+      var search = function (lastName) {
+        var contactsLength = contacts.length;
+        for(var j = 0; j < contactsLength; j++) {
+          if (contacts[j].lastName === lastName) {
+            printPerson(contacts[j]);
+          }
+        }
+      }
+      search("Polanco");
+      // ADD NEW ENTRY
+      // *************
+      var addEntry = function(firstName, lastName, phoneNumber, email) {
+        contacts[contacts.length] = {
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber,
+          email: email
+        }
+      }
+      addEntry("Victoria", "Smith", "(512) 234 - 9384", "victoria.smith@example.com");
+      contacts;
+      contacts[3];
+    </script>	
 </div>
 
 	
