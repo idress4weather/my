@@ -50,24 +50,7 @@
   right: 0;
   left: 0;
 }
-	</style-->
-  <!--div id="contactform1 style="margin-top: 10px !important;">
-  <div class="intro">
-    <div class="intro-body">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-md-offset-2">
-            <div class="column column-1">
-              <p class="intro-text" style=" margin-top: 45px; font-family: 'Quicksand', sans-serif; margin-right: 8px;"><a href="" class="btn btn-circle">
-                            <span style="font-size: 20px !important;">?
-                        </a></span></p>
-            </div>
-          </div>    
-        </div>
-      </div>
-    </div>
-  </div>
-</div-->
+-->
   <div id="contactform">
 	   
         <div class="brand clearfix">my General Book</div>
@@ -82,18 +65,39 @@
 
     	</ul>
 	</div>  
-  </div><!--div id="contactform"-->
-<!--div id="navigation">
-    <ul class="nav-list">
+  </div>
+	<div id = "container">
+  <h2>Phonebook 1.0</h2>
+  <form name = "phonebookForm" id = "phonebookForm">
+<h4 id ="search">Search Phonebook: <input type = "text" id="inputIdSearch" onblur="search()">
+    <span id="searchResult"></span></h4>
+  <h4 id ="input">Add entry: <input type = "text" id="inputIdInput"></h4>
+  <h4 id ="view">View all entries: <input type = "text" id="inputIdView"></h4>
+  </form>
+		<script>
+ myPhonebook = Array (
+Array(' Robert Mory ',' 07554035121 '),
+Array(' Susie Thompson ',' 0785430270 '))
 
+document.write("<pre>")
+ for (j = 0 ; j < myPhonebook.length ; ++j)
+ {
+ for (k = 0 ; k < myPhonebook.length ; ++k)
+ document.write(myPhonebook[j][k])
+ document.write("<br />")
+   }
+   document.write("</pre>")
 
-        <li id="js-show-all" class="btn btn-circle">ALL</li>
-        <li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
-        <li id="js-add-new" class="btn btn-circle">NEW</li>
+  var search = function(){
 
-
-    </ul>
-</div-->
+var searchInput = document.getElementById('inputIdSearch').value
+document.getElementById('searchResult').innerHTML = 
+      ("Searching for: " + searchInput + "...")
+document.writeln(myPhonebook.indexOf('searchInput'))
+	
+	
+	
+	
 <!--div id="contactform1"-->
 <!--div id="contactform2" ></div-->	<!--div id="contactform2"-->			
 <div id="search-panel" class="panel">
