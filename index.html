@@ -57,13 +57,13 @@ input[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 10px 10px 2px 50px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -79,9 +79,9 @@ input[type=text]:focus {
 <form>
   
 	<span><input type="text" name="search" placeholder="Search.."></span>
-		<span> <button onclick="talk()" style="padding: 0 !important; margin: 0 !important;"><i class="fa fa-microphone" aria-hidden="true" ></i></button></span>
+		<span> <button onclick="talk()" style="background: none; border:none; padding-top: 3px;"><i class="fa fa-microphone" aria-hidden="true" ></i></button></span>
  
-		<span><button onclick="stop()"><i class="fa fa-microphone-slash" aria-hidden="true" ></i></button></span>
+		<span><button onclick="stop()" style="background: none; border:none; padding-top: 3px;"><i class="fa fa-microphone-slash" aria-hidden="true" ></i></button></span>
 </form>
 <hr>
         <div class="brand clearfix">my General Book</div>
