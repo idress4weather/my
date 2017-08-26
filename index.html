@@ -77,11 +77,11 @@ input[type=text]:focus {
 
 
 <form>
-  <span ><i class="fa fa-angle-double-down animated" style="padding-top: 5px;"></i></span>
-	  <span><input type="text" name="search1" placeholder="Search.."></span>
-	<span><input type="text" name="search2" placeholder="Search.."></span>
-		<span><i class="fa fa-microphone" aria-hidden="true" style="padding-top: 5px;"></i></span>
-		<span><i class="fa fa-microphone-slash" aria-hidden="true" style="padding-top: 5px;"></i></span>
+  
+	<span><input type="text" name="search" placeholder="Search.."></span>
+		<span> <button onclick="talk ()"><i class="fa fa-microphone" aria-hidden="true" ></i></button></span>
+ 
+		<span><button onclick="stop ()"><i class="fa fa-microphone-slash" aria-hidden="true" ></i></button></span>
 </form>
 <hr>
         <div class="brand clearfix">my General Book</div>
@@ -95,7 +95,51 @@ input[type=text]:focus {
 
 
     	</ul>
-	</div>  
+	</div>
+	  <!--button onclick="speech ()">Слушать</button-->
+ 
+
+  <script>
+  var result = '';
+  // Создаем распознаватель
+  var recognizer = new webkitSpeechRecognition();
+
+  // Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
+  recognizer.interimResults = true;
+
+  // Какой язык будем распознавать?
+  recognizer.lang = 'ru-Ru';//en-En
+
+  //Используем колбек для обработки результатов
+
+  recognizer.onresult = function (event) {
+    result = event.results[event.resultIndex];//var 
+    if (result.isFinal) {
+      //alert('Вы сказали: ' + result[0].transcript);
+      if (result[0]=="hi"){
+        open folder/URL oor start recording or answer send to social media;}
+    } else {
+      console.log('Промежуточный результат: ',
+      result[0].transcript);
+    }
+  };
+
+  function speech (result) {//(result)
+    // Начинаем слушать микрофон и распознавать голос
+    recognizer.start();
+  }
+
+  var synth = window.speechSynthesis;//var synth = window.event.results[event.resultIndex];
+  var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
+//var utterance1 = result;//??????????????????
+  function talk () {
+    synth.speak (utterance);
+  }
+
+  function stop () {
+    synth.pause();
+  }
+  </script>
   </div>
 	<!--div id="contactform2" >
 	    <script type="text/javascript">
