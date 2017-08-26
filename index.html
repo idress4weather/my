@@ -141,86 +141,8 @@ input[type=text]:focus {
     synth.pause();
   }
   </script>
-  </div>
-	<!--div id="contactform2" >
-	    <script type="text/javascript">
-      
-      var bob = {
-        firstName: "Bob",
-        lastName: "Bullock",
-        phoneNumber: "(650) 899 - 9918",
-        email: "bob.bullock@example.com"
-      };
-      var mary = {
-        firstName: "Mary",
-        lastName: "Johnson",
-        phoneNumber: "(650) 888 - 8888",
-        email: "mary.johnson@example.com"
-      };
-      var jorge = {
-        firstName: "Jorge",
-        lastName: "Polanco",
-        phoneNumber: "(201) 928 - 8008",
-        email: "jorge.polanco@example.com"
-      };
-      // THE CONTACT LIST
-      // ****************
-      var contacts = [];
-      contacts[0] = bob;
-      contacts[1] = mary;
-      contacts[2] = jorge;
-      console.log(contacts);
-      console.log(contacts[1].phoneNumber);
-      
-      // PRINT ONE ENTRY
-      // ***************
-      var printPerson = function (person) {
-        console.log(person.firstName + " " + person.lastName);
-      }
-      printPerson(bob);
-      // PRINT EMAIL LIST
-      // ****************
-      for(var x = 0; x < contacts.length; x++) {
-        console.log(contacts[x].email);
-      };
-      
-      // PRINT CONTACT LIST
-      // ******************
-      function list() {
-        for(var i = 0; i < contacts.length; i++) {
-          console.log(contacts[i]);
-        }
-      } 
-      list();
-      // FIND ENTRY BY LAST NAME
-      // *****************
-      var search = function (lastName) {
-        var contactsLength = contacts.length;
-        for(var j = 0; j < contactsLength; j++) {
-          if (contacts[j].lastName === lastName) {
-            printPerson(contacts[j]);
-          }
-        }
-      }
-      search("Polanco");
-      // ADD NEW ENTRY
-      // *************
-      var addEntry = function(firstName, lastName, phoneNumber, email) {
-        contacts[contacts.length] = {
-          firstName: firstName,
-          lastName: lastName,
-          phoneNumber: phoneNumber,
-          email: email
-        }
-      }
-      addEntry("Victoria", "Smith", "(512) 234 - 9384", "victoria.smith@example.com");
-      contacts;
-      contacts[3];
-    </script>	
-</div-->
-
+ 
 	
-<!--div id="contactform1"-->
 		
 <div id="search-panel" class="panel">
     <!--h1>Search Contacts</h1-->
@@ -228,32 +150,8 @@ input[type=text]:focus {
         <div id="results"></div>      
         
 </div>
-  
-  <!--ul>
-    <li>
-      <a href="#" class="btn btn-circle"><i class="fa fa-angle-double-down animated"></i></a>
-      <ul>
-        <li><a href="#" ><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-        <li><a href="#" ><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        <li><a href="#" ><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
-	<li><a href="#" ><i class="fa fa-phone" aria-hidden="true"></i></a></li>
-        <li><a href="#" ><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        <li><a href="#" ><i class="fa fa-cutlery" aria-hidden="true"></i></a></li>      
-      </ul>
-    </li>
-  </ul id="search"-->
-
-	<!--div>
-            <label>
-		  <input type="text" name="search"  placeholder="Enter name of contact or keyWords" />
+</div><!--sekcia black->  
  
-                
-            </label>
-		
-        </div>    
-                <input type="submit" value="Submit"  />
-    </form>
-</div-->
     <div id="contact-panel" class="panel">
         <form id="contact" action="#">
             <h1>Add a new contact</h1>
