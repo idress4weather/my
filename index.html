@@ -145,9 +145,11 @@ input[type=text]:focus {
    	 <ul class="nav-list">
 
 <!--li id="js-show-all" class="btn btn-circle"><i class="fa fa-info-circle" aria-hidden="true"></i></li-->
-        <li id="js-show-all" class="btn btn-circle"><i class="fa fa-users" aria-hidden="true"></i></li>
+        <li id="js-show-all" class="btn btn-circle"><a href="#" id="toggler-show-panel">
+		<i class="fa fa-users" aria-hidden="true"></i></a></li>
         <li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
-        <li id="js-add-new" class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></li>
+        <li id="js-add-new" class="btn btn-circle"><a href="#" id="toggler-contact-panel">
+		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
 
 
     	</ul>
@@ -217,26 +219,108 @@ input[type=text]:focus {
   }
   </script>
  
-</div><!--sekcia black->	
-		
-<div id="search-panel" class="panel">
-    <!--h1>Search Contacts</h1-->
-    <!--form id="search" action="#"-->
 	
-  
- 
-    <div id="contact-panel" class="panel">
+		
+<div id="contact-panel" class="panel">
+    <!--h1>Add Contacts</h1-->
+   
+                <div id="box" style="display: none; text-align: center; position: relative;">
+                  <h5></h5>
+                  <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
+		 <form id="contact" action="#">	
+			<!--add label new add kind of book icon checkbox-->
+                <label>
+                    <input type="text" name="person" id="name" placeholder="John Smith" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+                <label>
+                    <input type="text" name="phone" id="name" placeholder="1234567" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+                <label>
+                    <input type="text" name="email" id="name" placeholder="john@example.com" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+                </div>     
+
+    	
+	
+	  
+	  
+	<script>
+  window.onload= function() {
+     document.getElementById('toggler-contact-panel').onclick = function() {
+         openbox('box', this);
+         return false;
+     };
+  };
+  function openbox(id, toggler) {
+     var div = document.getElementById(id);
+     if(div.style.display == 'block') {
+         div.style.display = 'none';
+         toggler.innerHTML = '<i class="fa fa-plus" aria-hidden="true"></i>';
+     }
+     else {
+         div.style.display = 'block';
+         toggler.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+     }
+  }
+  </script> 
+<div id="show-panel" class="panel">
+    <!--h1>Add Contacts</h1-->
+   
+                <div id="box" style="display: none; text-align: center; position: relative;">
+                  <h5></h5>
+                  <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
+		 	
+			<div id = "show-panel" class="panel"></div>
+                </div>     
+
+    	
+	
+	  
+	  
+	<script>
+  window.onload= function() {
+     document.getElementById('toggler-show-panel').onclick = function() {
+         openbox('box', this);
+         return false;
+     };
+  };
+  function openbox(id, toggler) {
+     var div = document.getElementById(id);
+     if(div.style.display == 'block') {
+         div.style.display = 'none';
+         toggler.innerHTML = '<i class="fa fa-users" aria-hidden="true"></i>';
+     }
+     else {
+         div.style.display = 'block';
+         toggler.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+     }
+  }
+  </script> 	
+	  
+</div><!--sekcia black-->
+
+    <!---div id="contact-panel" class="panel">
         <form id="contact" action="#">
             <h1>Add a new contact</h1>
             <div>
 	
 
-<!--add label new add kind of book icon checkbox-->
 <div>
-  <a href="#" class="btn btn-circle"><!--i class="fa fa-plus" aria-hidden="true"></i-->ADDfield</a>
+  <a href="#" class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i>ADDfield</a>
   <ul>
     <li>
-      <a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></i-->BookIcon</a>
+      <a href="#" class="btn btn-circle"><!--i class="fa fa-angle-double-down animated"></>BookIcon</a>
       <ul>
         <li><a href="#" ><i class="fa fa-phone" aria-hidden="true"></i></a></li>
         <li><a href="#" ><i class="fa fa-external-link" aria-hidden="true"></i></a></li>
@@ -249,7 +333,7 @@ input[type=text]:focus {
   </ul>
 </div>
 			    
-<!--add label new add kind of book icon checkbox-->
+
                 <label>
                     <input type="text" name="person" id="name" placeholder="John Smith" />
 			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
@@ -287,7 +371,7 @@ input[type=text]:focus {
 	<i class="fa fa-home" aria-hidden="true"></i>
 	<i class="fa fa-camera" aria-hidden="true"></i>
 	<i class="fa fa-user-circle" aria-hidden="true"></i>
-	<i class="fa fa-video-camera" aria-hidden="true"></i><!--webcamera-->
+	<i class="fa fa-video-camera" aria-hidden="true"></i>
 	<i class="fa fa-globe" aria-hidden="true"></i>
 	<i class="fa fa-ban" aria-hidden="true"></i>
 	<i class="fa fa-venus-double" aria-hidden="true"></i>
@@ -296,7 +380,7 @@ input[type=text]:focus {
 	<i class="fa fa-map-marker" aria-hidden="true"></i>
 	<i class="fa fa-film" aria-hidden="true"></i>
 	<i class="fa fa-wifi" aria-hidden="true"></i>
-	<i class="fa fa-play" aria-hidden="true"></i><!--video-->
+	<i class="fa fa-play" aria-hidden="true"></i>
 	<i class="fa fa-car" aria-hidden="true"></i>
 	<i class="fa fa-calendar" aria-hidden="true"></i>
 	<i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -321,7 +405,7 @@ input[type=text]:focus {
       <a href="#" class="btn btn-circle"><i class="fa fa-angle-double-down animated"></i></a>
 	</div>	
 
-
+-->
 
 </div><!--div id="contactform"-->   
 <!--/div><!--end of contactform-->
