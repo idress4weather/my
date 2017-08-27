@@ -91,7 +91,7 @@ input[type=text]:focus {
    	 <ul class="nav-list">
 
 <li id="js-show-instruction" class="btn btn-circle" ><i class="fa fa-info-circle" aria-hidden="true"></i></li-->
-   <div class="brand"><a href="#" id="toggler" title="Click what to do">
+   <div class="brand"><a href="#" id="toggler" title="Click what to do" style="color: #42DCA3;">
 	   <i class="fa fa-info-circle" aria-hidden="true"></i></a>General Book		
 		
                 <div id="box" style="display: none; text-align: center; position: relative;">
@@ -114,6 +114,31 @@ input[type=text]:focus {
 
     	
 	</div><!--"brand"-->
+	  
+	  
+	<script>
+  window.onload= function() {
+     document.getElementById('toggler').onclick = function() {
+         openbox('box', this);
+         return false;
+     };
+  };
+  function openbox(id, toggler) {
+     var div = document.getElementById(id);
+     if(div.style.display == 'block') {
+         div.style.display = 'none';
+         toggler.innerHTML = '<i class="fa fa-info-circle" aria-hidden="true"></i>';
+     }
+     else {
+         div.style.display = 'block';
+         toggler.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+     }
+  }
+  </script> 
+	  
+	  
+	  
+	  
 	<div id="navigation">
    	 <ul class="nav-list">
 
@@ -692,18 +717,7 @@ searchForm.addEventListener('submit', function(){
   if(results.length>0){
     
     for(var i = 0;i<results.length;i++){
-      document.getElementById('results').innerHTML += '<hr><br><div class="contact-item">Name:'+results[i].name+
-	      '<br>Phone:'+results[i].phone+'</div><br><hr><br><div id="navigation">
-   	 <ul class="nav-list">
-
-
-        <li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li>
-        <li id="js-get-all-down" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-down animated" aria-hidden="true"></i></li>
-        <li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-
-
-    	</ul>
-	</div>
+      document.getElementById('results').innerHTML += '<div class="contact-item">Name:'+results[i].name+'<br>Phone:'+results[i].phone+'</div><hr><div id="navigation"><ul class="nav-list"><li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li><li id="js-get-all-down" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-down animated" aria-hidden="true"></i></li><li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li></ul></div>';
     }
   } else{
    document.getElementById('results').innerHTML += '<hr><div class="contact-item">There are no results for this name</div><hr>';
@@ -727,19 +741,8 @@ searchForm.addEventListener('submit', function(){
   document.getElementById('results').innerHTML = '';
   if(results.length>0){
     
-    for(var i = 0;i<results.length;i++){
-      document.getElementById('results').innerHTML += '<hr><br><div class="contact-item">Name:'+results[i].name+
-	      '<br>Phone:'+results[i].phone+'<br>Email:'+results[i].email+'</div><br><hr><br><div id="navigation">
-   	 <ul class="nav-list">
-
-
-        <li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li>
-        <li id="js-get-all-up" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-up animated" aria-hidden="true"></i></li>
-        <li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-
-
-    	</ul>
-	</div>
+     for(var i = 0;i<results.length;i++){
+      document.getElementById('results').innerHTML += '<div class="contact-item">Name:'+results[i].name+'<br>Phone:'+results[i].phone+'<br>Email:'+results[i].email+'</div><hr><div id="navigation"><ul class="nav-list"><li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li><li id="js-get-all-up" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-up animated" aria-hidden="true"></i></li><li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li></ul></div>';
     }
   
   
@@ -747,7 +750,7 @@ searchForm.addEventListener('submit', function(){
   event.preventDefault();
 });
 	/**********************************************************************************/
-var searchForm = document.getElementById('js-get-all-down');
+var searchForm = document.getElementById('js-get-all-up');
 searchForm.addEventListener('submit', function(){
   var results;
   if(results !== undefined){
@@ -762,18 +765,7 @@ searchForm.addEventListener('submit', function(){
   if(results.length>0){
     
     for(var i = 0;i<results.length;i++){
-      document.getElementById('results').innerHTML += '<hr><br><div class="contact-item">Name:'+results[i].name+
-	      '<br>Phone:'+results[i].phone+'<br>Email:'+results[i].email+'</div><br><hr><br><div id="navigation">
-   	 <ul class="nav-list">
-
-
-        <li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li>
-        <li id="js-get-all-up" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-down animated" aria-hidden="true"></i></li>
-        <li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-
-
-    	</ul>
-	</div>
+      document.getElementById('results').innerHTML += '<div class="contact-item">Name:'+results[i].name+'<br>Phone:'+results[i].phone+'</div><hr><div id="navigation"><ul class="nav-list"><li id="js-edit" class="btn btn-circle"><i class="fa fa-pencil" aria-hidden="true"></i></li><li id="js-get-all-down" class="btn btn-circle" style="padding: 7px;"><i class="fa fa-angle-double-down animated" aria-hidden="true"></i></li><li id="js-delete" class="btn btn-circle"><i class="fa fa-trash-o" aria-hidden="true"></i></li></ul></div>';
     }
   
   
