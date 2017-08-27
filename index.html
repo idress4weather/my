@@ -221,10 +221,11 @@ input[type=text]:focus {
  
 	
 		
-<div id="contact-panel" class="panel">
-    <!--h1>Add Contacts</h1-->
+
    
                 <div id="box" style="display: none; text-align: center; position: relative;">
+			<div id="contact-panel" class="panel">
+    <!--h1>Add Contacts</h1-->
                   <h5></h5>
                   <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
 		 <form id="contact" action="#">	
@@ -266,18 +267,19 @@ input[type=text]:focus {
      var div = document.getElementById(id);
      if(div.style.display == 'block') {
          div.style.display = 'none';
-         toggler.innerHTML = '<i class="fa fa-plus" aria-hidden="true"></i>';
+         toggler-contact-panel.innerHTML = '<i class="fa fa-plus" aria-hidden="true"></i>';
      }
      else {
          div.style.display = 'block';
-         toggler.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+         toggler-contact-panel.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
      }
   }
   </script> 
-<div id="show-panel" class="panel">
-    <!--h1>Add Contacts</h1-->
+
    
                 <div id="box" style="display: none; text-align: center; position: relative;">
+			<div id="show-panel" class="panel">
+    <!--h1>Add Contacts</h1-->
                   <h5></h5>
                   <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
 		 	
@@ -299,11 +301,11 @@ input[type=text]:focus {
      var div = document.getElementById(id);
      if(div.style.display == 'block') {
          div.style.display = 'none';
-         toggler.innerHTML = '<i class="fa fa-users" aria-hidden="true"></i>';
+         toggler-show-panel.innerHTML = '<i class="fa fa-users" aria-hidden="true"></i>';
      }
      else {
          div.style.display = 'block';
-         toggler.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+         toggler-show-panel.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
      }
   }
   </script> 	
