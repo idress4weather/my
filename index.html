@@ -54,7 +54,7 @@
 }
 -->
 	
-  <div id="contactform">
+  <div id="contactform" class="toggle">
 	<style> 
 input[type=text] {
     width: 130px;
@@ -145,14 +145,14 @@ input[type=text]:focus {
    	 <ul class="nav-list">
 
 <!--li id="js-show-all" class="btn btn-circle"><i class="fa fa-info-circle" aria-hidden="true"></i></li-->
-        <li  id="js-show-all" class="btn btn-circle"><a class="toggler" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
+        <li  id="js-show-all" class="btn btn-circle"><a class="toggler1" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
 		<i class="fa fa-users" aria-hidden="true"></i></a></li>
-        <li id="js-search" class="btn btn-circle"><a class="toggler" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
+        <li id="js-search" class="btn btn-circle"><a class="toggler2" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
 		<i class="fa fa-search" aria-hidden="true"></i></a></li>
 	<!--li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
         <!--li><a href="#"  id="js-add-new" class="btn btn-circle">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li-->
-	<li id="js-add-new" class="btn btn-circle"><a class="toggler" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
+	<li id="js-add-new" class="btn btn-circle"><a class="toggler3" href="#"><!--a href="#"  onclick="openbox('box'); return false"-->
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
 
     	</ul>
@@ -323,11 +323,26 @@ var toggler = {
 
     process: function() {
 
-        var i, list = base.findClass('toggler'), length = list.length;
+        var i, list = base.findClass('toggler1'), length = list.length;
 
         for(i = 0; i < length; i++) base.bind(list[i], 'click', this.toggle);
 
-       list = base.findClass('content');
+       list = base.findClass('content1');
+
+        length = list.length;
+
+        for(i = 0; i < length; i++) list[i].style.display = 'none';
+
+    
+	var toggler3 = {
+
+    process: function() {
+
+        var i, list = base.findClass('toggler3'), length = list.length;
+
+        for(i = 0; i < length; i++) base.bind(list[i], 'click', this.toggle3);
+
+       list = base.findClass('content3');
 
         length = list.length;
 
@@ -337,11 +352,32 @@ var toggler = {
 
     toggle: function() {
 
-        var content = base.findClass('content', this.parentNode)[0], e = arguments[0] || window.event;
+        var content3 = base.findClass('content3', this.parentNode)[0], e = arguments[0] || window.event;
 
-        if(content.style.display == 'block') {
+        if(content3.style.display == 'block') {
 
-            content.style.display = 'none';
+            content3.style.display = 'none';
+
+            this.innerHTML = 'Показать';
+
+        }
+
+        else {
+
+            content.style.display = 'block';
+
+            this.innerHTML = 'Скрыть';
+
+        }
+
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+    }
+	var content1 = base.findClass('content1', this.parentNode)[0], e = arguments[0] || window.event;
+
+        if(content1.style.display == 'block') {
+
+            content1.style.display = 'none';
 
             this.innerHTML = 'Показать';
 
@@ -414,9 +450,9 @@ font-size: 11px;
 
 
 
-    <div class="toggle">
+    <!--div class="toggle"-->
   <!--a class="toggler" href="#">Показать</a-->
-        <div class="content"><!--Текст текст текст текст Текст текст текст текст Текст текст текст текст Текст текст текст текст-->
+        <div class="content3"><!--Текст текст текст текст Текст текст текст текст Текст текст текст текст Текст текст текст текст-->
 
 <div id="contact-panel" class="panel">
     <!--h1>Add Contacts</h1-->
@@ -449,7 +485,6 @@ font-size: 11px;
 
         
 
-    </div>
         <!--div class="toggle">
 
         <div class="content">Текст текст текст текст Текст текст текст текст Текст текст текст текст Текст текст текст текст</div>
@@ -458,13 +493,13 @@ font-size: 11px;
 
     </div-->
 
-    <div class="toggle">
+    <!--div class="toggle"-->
 
-        <div class="content"><div id = "show-panel" class="panel"></div></div>
-
+        <div class="content1"><div id = "show-panel" class="panel"></div></div>
+</div>    <!-- END OFdiv class="toggle"-->
+</div><!--div id="contactform"--> 
        <!--a class="toggler" href="#">Показать</a-->
 
-    </div>	
 	
  <!--script type="text/javascript">
 
@@ -512,8 +547,7 @@ function openbox(id){
      }
   }
   </script--> 	
-	  
-</div><!--sekcia black-->
+
 
     <!---div id="contact-panel" class="panel">
         <form id="contact" action="#">
@@ -612,7 +646,7 @@ function openbox(id){
 
 -->
 
-</div><!--div id="contactform"-->   
+  
 <!--/div><!--end of contactform-->
 
 	<style>
@@ -904,9 +938,9 @@ position: relative;
 		</style>
 		<script>
 		;(function(global){
-document.getElementById('show-panel').style.display = 'none';
+/*document.getElementById('show-panel').style.display = 'none';
   document.getElementById('search-panel').style.display = 'none';
-  document.getElementById('contact-panel').style.display = 'none';
+  document.getElementById('contact-panel').style.display = 'none';*/
    var AddressBook = function(name,phone,email){
      return new AddressBook.init(name,phone,email);
    };
