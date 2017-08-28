@@ -145,15 +145,15 @@ input[type=text]:focus {
    	 <ul class="nav-list">
 
 <!--li id="js-show-all" class="btn btn-circle"><i class="fa fa-info-circle" aria-hidden="true"></i></li-->
-        <li  id="js-show-all" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
-		<i class="fa fa-users" aria-hidden="true"></i></a></li>
-        <li id="js-search" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
-		<i class="fa fa-search" aria-hidden="true"></i></a></li>
+        <li  id="js-show-all" class="btn btn-circle"><!--a href="#"  onclick="openbox('box'); return false"--
+		<i class="fa fa-users" aria-hidden="true"></i><!--/a--></li>
+        <li id="js-search" class="btn btn-circle"><!--a href="#"  onclick="openbox('box'); return false"-->
+		<i class="fa fa-search" aria-hidden="true"></i><!--/a--></li>
 	<!--li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
         <!--li><a href="#"  id="js-add-new" class="btn btn-circle">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li-->
-	<li id="js-add-new" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
-		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
+	<li id="js-add-new" class="btn btn-circle"><!--a href="#"  onclick="openbox('box'); return false"-->
+		<i class="fa fa-plus" aria-hidden="true"></i><!--/a--></li>
 
     	</ul>
 	</div>
@@ -225,7 +225,7 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
     synth.pause();
   }
   </script>
- <script type="text/javascript">
+ <!--script type="text/javascript">
 
  
 
@@ -247,14 +247,14 @@ function openbox(id){
 
 }
 
-</script>
+</script-->
 <!--div id="blok2">
 <div id="box" style="display: none;"></div>	
 </div-->	
 		
 
    <!--div id="blok3"-->
-	<div id="box" style="display: none;">
+	<!--div id="box" style="display: none;"-->
                 <!--div id="box" style="display: none; text-align: center; position: relative;">
 	-->		<div id="contact-panel" class="panel">
     <!--h1>Add Contacts</h1-->
@@ -283,7 +283,7 @@ function openbox(id){
             </div>
         </form>
 </div>     
-</div>
+
     	
 	
 	  
@@ -309,7 +309,7 @@ function openbox(id){
   </script--> 
 
 <!--div id="blok1"-->
-<div id="box" style="display: none;">
+<!--div id="box" style="display: none;--">
 <!--div id="box" style="display: none; text-align: center; position: relative;">
 	-->		
     <!--h1>Add Contacts</h1-->
@@ -318,7 +318,7 @@ function openbox(id){
 		 	
 			<div id = "show-panel" class="panel"></div>
                    
-</div>
+
     	
 	
 	  
@@ -734,9 +734,9 @@ position: relative;
 		</style>
 		<script>
 		;(function(global){
-/* document.getElementById('show-panel').style.display = 'none';
+document.getElementById('show-panel').style.display = 'none';
   document.getElementById('search-panel').style.display = 'none';
-  document.getElementById('contact-panel').style.display = 'none';*/
+  document.getElementById('contact-panel').style.display = 'none';
    var AddressBook = function(name,phone,email){
      return new AddressBook.init(name,phone,email);
    };
