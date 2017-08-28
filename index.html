@@ -148,7 +148,7 @@ input[type=text]:focus {
         <li id="js-show-all" class="btn btn-circle"><a href="#" id="toggler-show-panel">
 		<i class="fa fa-users" aria-hidden="true"></i></a></li>
         <li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
-        <li id="js-add-new" class="btn btn-circle"><a href="#" id="toggler-contact-panel">
+        <li><a href="#"  id="js-add-new" class="btn btn-circle">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
 
 
@@ -208,7 +208,11 @@ input[type=text]:focus {
   }
 
   var synth = window.speechSynthesis;//var synth = window.event.results[event.resultIndex];
-  var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
+
+	  
+/*let my=new obj(function whic to config this let=my with obj methods )***************************************************/	  
+/**new*/	  
+var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
 //var utterance1 = result;//??????????????????
   function talk () {
     synth.speak (utterance);
@@ -258,20 +262,20 @@ input[type=text]:focus {
 	  
 	<script>
   window.onload= function() {
-     document.getElementById('toggler-contact-panel').onclick = function() {
+     document.getElementById('js-add-new').onclick = function() {
          openbox('box', this);
          return false;
      };
   };
-  function openbox(id, toggler-contact-panel) {
+  function openbox(id, js-add-new) {
      var div = document.getElementById(id);
      if(div.style.display == 'block') {
          div.style.display = 'none';
-         toggler-contact-panel.innerHTML = '<i class="fa fa-plus" aria-hidden="true"></i>';
+         js-add-new.innerHTML = '<i class="fa fa-plus" aria-hidden="true"></i>';
      }
      else {
          div.style.display = 'block';
-         toggler-contact-panel.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
+         js-add-new.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
      }
   }
   </script> 
