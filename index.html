@@ -225,6 +225,246 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
     synth.pause();
   }
   </script>
+	
+	
+<script type="text/javascript">
+
+// Набор функций
+
+var base = {
+
+    // Поиск элементов по классу
+
+    findClass: function(str, node) {
+
+         if(document.getElementsByClassName) return (node || document).getElementsByClassName(str);
+
+         else {
+
+              var node = node || document, list = node.getElementsByTagName('*'), length = list.length, Class = str.split(/\s+/), classes = Class.length, array = [], i, j, key;
+
+              for(i = 0; i < length; i++) {
+
+                    key = true;
+
+                    for(j = 0; j < classes; j++) if(list[i].className.search('\\b' + Class[j] + '\\b') == -1) key = false;
+
+                    if(key) array.push(list[i]);
+
+              }
+
+              return array;
+
+         }
+
+    },
+
+    // Добавление обработчиков событий
+
+    bind: function(node, type, listener) {
+
+        if(node.addEventListener) node.addEventListener(type, listener, false);
+
+        //@cc_on node.attachEvent('on' + type, function() { listener.call(node); });
+
+    },
+
+    // Реализация DOMContentLoaded
+
+    init: [],
+
+   ready: function() {
+
+        if(!arguments.callee.done) {
+
+            arguments.callee.done = true;
+
+            if(this.timer) clearInterval(this.timer);
+
+            var i, length = this.init.length;
+
+            for(i = 0; i < length; i++) this.init[i]();
+
+            this.init = [];
+
+        }
+
+    },
+
+   check: function() {
+
+        var _this = this, listener = function() {
+
+            _this.ready();
+
+        };
+
+        if(document.addEventListener) document.addEventListener('DOMContentLoaded', listener, false);
+
+        if(/KHTML|WebKit/i.test(navigator.userAgent)) this.timer = setInterval(function() {
+
+            if(/loaded|complete/.test(document.readyState)) base.ready();
+
+      }, 10);
+
+        /*@cc_on document.write(unescape('%3CSCRIPT onreadystatechange="if(this.readyState==\'complete\') base.ready()" defer=defer src=\/\/:%3E%3C/SCRIPT%3E')); @*/
+
+        this.bind(window, 'load', listener);
+
+    }
+
+};
+
+ 
+
+// Функции для работы с панельками
+
+var toggler = {
+
+    process: function() {
+
+        var i, list = base.findClass('toggler'), length = list.length;
+
+        for(i = 0; i < length; i++) base.bind(list[i], 'click', this.toggle);
+
+       list = base.findClass('content');
+
+        length = list.length;
+
+        for(i = 0; i < length; i++) list[i].style.display = 'none';
+
+    },
+
+    toggle: function() {
+
+        var content = base.findClass('content', this.parentNode)[0], e = arguments[0] || window.event;
+
+        if(content.style.display == 'block') {
+
+            content.style.display = 'none';
+
+            this.innerHTML = 'Показать';
+
+        }
+
+        else {
+
+            content.style.display = 'block';
+
+            this.innerHTML = 'Скрыть';
+
+        }
+
+        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+    }
+
+};
+
+ 
+
+// Ищем блоки с классом «toggle» по событию DOMContentLoaded
+
+base.init.push(function() {
+
+    toggler.process();
+
+});
+
+ 
+
+// Запускаем проверку готовности DOM
+
+base.check();
+
+</script>
+
+<style type="text/css">
+
+.toggle {
+
+width: 200px;
+
+margin: 0 0 14px;
+
+text-align: right;
+
+border: 1px solid #ccc;
+
+}
+
+.toggle .content {
+
+text-align: left;
+
+border: 1px solid #ccc;
+
+background: #eee;
+
+}
+
+.toggle .toggler {
+
+font-size: 11px;
+
+}
+
+</style>
+
+
+
+    <div class="toggle">
+
+        <div class="content"><!--Текст текст текст текст Текст текст текст текст Текст текст текст текст Текст текст текст текст-->
+
+<div id="contact-panel" class="panel">
+    <!--h1>Add Contacts</h1-->
+                  <h5></h5>
+                  <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
+		 <form id="contact" action="#">	
+			<!--add label new add kind of book icon checkbox-->
+                <label>
+                    <input type="text" name="person" id="name" placeholder="John Smith" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+                <label>
+                    <input type="text" name="phone" id="name" placeholder="1234567" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+                <label>
+                    <input type="text" name="email" id="name" placeholder="john@example.com" />
+			<div class="btn btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+</div>     
+        </div>
+
+        <a class="toggler" href="#">Показать</a>
+
+    </div>
+        <!--div class="toggle">
+
+        <div class="content">Текст текст текст текст Текст текст текст текст Текст текст текст текст Текст текст текст текст</div>
+
+        <a class="toggler" href="#">Показать</a>
+
+    </div-->
+
+    <div class="toggle">
+
+        <div class="content"><div id = "show-panel" class="panel"></div></div>
+
+       <a class="toggler" href="#">Показать</a>
+
+    </div>	
+	
  <!--script type="text/javascript">
 
  
