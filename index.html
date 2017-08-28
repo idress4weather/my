@@ -148,9 +148,10 @@ input[type=text]:focus {
         <li id="js-show-all" class="btn btn-circle"><a href="#" id="toggler-show-panel">
 		<i class="fa fa-users" aria-hidden="true"></i></a></li>
         <li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
-        <li><a href="#"  id="js-add-new" class="btn btn-circle">
+        <!--li><a href="#"  id="js-add-new" class="btn btn-circle">
+		<i class="fa fa-plus" aria-hidden="true"></i></a></li-->
+	<li id="js-add-new" class="btn btn-circle"><a href="#" id="toggler-show-panel">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
-
 
     	</ul>
 	</div>
@@ -223,12 +224,14 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
   }
   </script>
  
+<div id="blok2">
 	
+<div>	
 		
 
-   
-                <div id="box" style="display: none; text-align: center; position: relative;">
-			<div id="contact-panel" class="panel">
+   <div id="blok3">
+                <!--div id="box" style="display: none; text-align: center; position: relative;">
+	-->		<div id="contact-panel" class="panel">
     <!--h1>Add Contacts</h1-->
                   <h5></h5>
                   <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
@@ -254,13 +257,13 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
                 <input type="submit" value="Submit" />
             </div>
         </form>
-                </div>     
-
+</div>     
+</div>
     	
 	
 	  
 	  
-	<script>
+	<!--script>
   window.onload= function() {
      document.getElementById('js-add-new').onclick = function() {
          openbox('box', this);
@@ -278,23 +281,23 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
          js-add-new.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
      }
   }
-  </script> 
+  </script--> 
 
-   
-                <div id="box" style="display: none; text-align: center; position: relative;">
-			<div id="show-panel" class="panel">
+<div id="blok1">
+                <!--div id="box" style="display: none; text-align: center; position: relative;">
+	-->		
     <!--h1>Add Contacts</h1-->
                   <h5></h5>
                   <!--p style="color: #fff !important; font-size: 0.8em;"></p-->
 		 	
 			<div id = "show-panel" class="panel"></div>
-                </div>     
-
+                   
+</div>
     	
 	
 	  
 	  
-	<script>
+	<!--script>
   window.onload= function() {
      document.getElementById('toggler-show-panel').onclick = function() {
          openbox('box', this);
@@ -312,7 +315,7 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
          toggler-show-panel.innerHTML = '<i class="fa fa-ban" aria-hidden="true"></i>';
      }
   }
-  </script> 	
+  </script--> 	
 	  
 </div><!--sekcia black-->
 
@@ -819,8 +822,8 @@ searchForm.addEventListener('submit', function(){
   event.preventDefault();
 });
 /********************************************************************//////*/	
-var searchForm = document.getElementById('js-get-all-down');
-searchForm.addEventListener('submit', function(){
+var searchForm0 = document.getElementById('js-get-all-down');
+searchForm0.addEventListener('submit', function(){
   var results;
   if(results !== undefined){
     results = null;
@@ -828,7 +831,7 @@ searchForm.addEventListener('submit', function(){
   if(!window.contactList){
     window.contactList = $ab();
   }else{
-    results = contactList.search(searchForm.search.value);
+    results = contactList.search(searchForm0.search.value);
   }
   document.getElementById('results').innerHTML = '';
   if(results.length>0){
@@ -842,8 +845,8 @@ searchForm.addEventListener('submit', function(){
   event.preventDefault();
 });
 	/**********************************************************************************/
-var searchForm = document.getElementById('js-get-all-up');
-searchForm.addEventListener('submit', function(){
+var searchForm2 = document.getElementById('js-get-all-up');
+searchForm2.addEventListener('submit', function(){
   var results;
   if(results !== undefined){
     results = null;
@@ -851,7 +854,7 @@ searchForm.addEventListener('submit', function(){
   if(!window.contactList){
     window.contactList = $ab();
   }else{
-    results = contactList.search(searchForm.search.value);
+    results = contactList.search(searchForm2.search.value);
   }
   document.getElementById('results').innerHTML = '';
   if(results.length>0){
@@ -866,7 +869,40 @@ searchForm.addEventListener('submit', function(){
 });	
 /**************************************************************3 the same func with diff html*/	
 			
-
+/*$('div a').on('click', function() {
+    var href = $(this).attr('href');
+    window.open(href, '_blank').focus();
+});*/
+/*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
+фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
+в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+	function inNewWindow(block1) {
+    block1.on('click', 'a:not([href^="#"])', function(evt) {
+        evt.preventDefault();
+        window.open(evt.target.href, '_blank');
+    })
+}
+	/*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
+фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
+в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+	function inNewWindow(block2) {
+    block2.on('click', 'a:not([href^="#"])', function(evt) {
+        evt.preventDefault();
+        window.open(evt.target.href, '_blank');
+    })
+}
+	/*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
+фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
+в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+	function inNewWindow(block3) {
+    block3.on('click', 'a:not([href^="#"])', function(evt) {
+        evt.preventDefault();
+        window.open(evt.target.href, '_blank');
+    })
+}
 document.getElementById('js-show-all').addEventListener('click', function(){
   if(window.contactList){ //check if we already have a contact list
      document.getElementById('show-panel').innerHTML = '';
