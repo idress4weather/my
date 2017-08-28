@@ -145,14 +145,14 @@ input[type=text]:focus {
    	 <ul class="nav-list">
 
 <!--li id="js-show-all" class="btn btn-circle"><i class="fa fa-info-circle" aria-hidden="true"></i></li-->
-        <li  id="js-show-all" class="btn btn-circle"><a href="#">
+        <li  id="js-show-all" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
 		<i class="fa fa-users" aria-hidden="true"></i></a></li>
-        <li id="js-search" class="btn btn-circle"><a href="#" >
+        <li id="js-search" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
 		<i class="fa fa-search" aria-hidden="true"></i></a></li>
 	<!--li id="js-search" class="btn btn-circle"><i class="fa fa-search" aria-hidden="true"></i></li>
         <!--li><a href="#"  id="js-add-new" class="btn btn-circle">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li-->
-	<li id="js-add-new" class="btn btn-circle"><a href="#" >
+	<li id="js-add-new" class="btn btn-circle"><a href="#"  onclick="openbox('box'); return false">
 		<i class="fa fa-plus" aria-hidden="true"></i></a></li>
 
     	</ul>
@@ -225,13 +225,36 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
     synth.pause();
   }
   </script>
+ <script type="text/javascript">
+
  
-<div id="blok2">
-	
-<div>	
+
+function openbox(id){
+
+    display = document.getElementById(id).style.display;
+
+ 
+
+    if(display=='none'){
+
+       document.getElementById(id).style.display='block';
+
+    }else{
+
+       document.getElementById(id).style.display='none';
+
+    }
+
+}
+
+</script>
+<!--div id="blok2">
+<div id="box" style="display: none;"></div>	
+</div-->	
 		
 
-   <div id="blok3">
+   <!--div id="blok3"-->
+	<div id="box" style="display: none;">
                 <!--div id="box" style="display: none; text-align: center; position: relative;">
 	-->		<div id="contact-panel" class="panel">
     <!--h1>Add Contacts</h1-->
@@ -285,8 +308,9 @@ var utterance = new SpeechSynthesisUtterance('How about we say this now? This is
   }
   </script--> 
 
-<div id="blok1">
-                <!--div id="box" style="display: none; text-align: center; position: relative;">
+<!--div id="blok1"-->
+<div id="box" style="display: none;">
+<!--div id="box" style="display: none; text-align: center; position: relative;">
 	-->		
     <!--h1>Add Contacts</h1-->
                   <h5></h5>
@@ -710,6 +734,9 @@ position: relative;
 		</style>
 		<script>
 		;(function(global){
+/* document.getElementById('show-panel').style.display = 'none';
+  document.getElementById('search-panel').style.display = 'none';
+  document.getElementById('contact-panel').style.display = 'none';*/
    var AddressBook = function(name,phone,email){
      return new AddressBook.init(name,phone,email);
    };
@@ -878,7 +905,7 @@ searchForm2.addEventListener('submit', function(){
 /*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
 фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
 в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
-соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).
 	function inNewWindow(block1) {
     block1.on('click', 'a:not([href^="#"])', function(evt) {
         evt.preventDefault();
@@ -888,7 +915,7 @@ searchForm2.addEventListener('submit', function(){
 	/*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
 фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
 в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
-соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).
 	function inNewWindow(block2) {
     block2.on('click', 'a:not([href^="#"])', function(evt) {
         evt.preventDefault();
@@ -898,13 +925,13 @@ searchForm2.addEventListener('submit', function(){
 	/*создаем обработчик события на саму обертку (в нашем случае это будут #blok_1 и #blok_3). На случай, если ссылки могут появиться внутри блока динамически. Можно повесить событие непосредственно на ссылки, дело от этого не изменится;
 фильтровать будет только ссылки по их селектору: a:not([href^="#"]) или a[href^="http://"] и a[href^="https://"]; хочется же, чтобы переход был именно по ссылке, а не по якорю.
 в обработчике остановим обработку события по-умолчанию, чтобы переход внутри страницы не был совершен (надо смотреть, чтобы это не повредило общей логики работы сайта) и совершим переход с помощью window.open();
-соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).*/
+соответственно работать с этой функцией так: inNewWindow(document.getElementById('blok_1')).
 	function inNewWindow(block3) {
     block3.on('click', 'a:not([href^="#"])', function(evt) {
         evt.preventDefault();
         window.open(evt.target.href, '_blank');
     })
-}
+}*/
 document.getElementById('js-show-all').addEventListener('click', function(){
   if(window.contactList){ //check if we already have a contact list
      document.getElementById('show-panel').innerHTML = '';
